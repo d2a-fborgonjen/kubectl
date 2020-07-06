@@ -1,6 +1,6 @@
 FROM gcr.io/cloud-builders/kubectl
 
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 LABEL name="kubectl"
 LABEL repository="http://github.com/d2a-fborgonjen/kubectl"
 LABEL homepage="http://github.com/d2a-fborgonjen/kubectl"
