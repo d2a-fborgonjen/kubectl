@@ -16,8 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: deploy to cluster
-      uses: steebchen/kubectl@master
+      uses: d2a-fborgonjen/kubectl@master
       env:
+        GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
         args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
