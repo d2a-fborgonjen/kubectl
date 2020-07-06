@@ -7,7 +7,7 @@ echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
 export KUBECONFIG=/tmp/config
 
 # Authenticate gcloud
-echo "$GCLOUD_SERVICE_KEY" | base64 --decode > /tmp/gcloud_service_key
+echo "$GCLOUD_SERVICE_KEY" | base64 --decode > /tmp/gcloud_service_key.json
 gcloud auth activate-service-account --key-file=/tmp/gcloud-service-key.json
 
 sh -c "kubectl${KUBECTL_VERSION:+.${KUBECTL_VERSION}} $*"
